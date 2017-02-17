@@ -1,0 +1,55 @@
+//- one-column.pug
+- var desc = 'default meta desc'
+- var twitterSite = ''
+- var twitterTitle = ''
+- var twitterDesc = ''
+- var twitterImage = ''
+- var ogTitle = ''
+- var ogType = ''
+- var ogWebsiteURL = ''
+- var ogImage = ''
+- var ogDesc = ''
+- var ogSiteName = ''
+- var fbNumericID = ''
+block variables
+doctype html
+html(lang='en')
+
+	head
+
+		block meta
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='description', content= desc)
+
+		title #{title}
+
+		// Twitter Card data
+		meta(name='twitter:card', content='summary_large_image')
+		meta(name='twitter:site', content=twitterSite)
+		meta(name='twitter:title', content=twitterTitle)
+		meta(name='twitter:description', content=twitterDesc)
+		meta(name='twitter:image', content=twitterImage)
+
+		//Open Graph data
+		meta(property='og:title', content=ogTitle)
+		meta(property='og:type', content=ogType)
+		meta(property='og:url', content=ogWebsiteURL)
+		meta(property='og:image', content=ogImage)
+		meta(property='og:description', content=ogDesc)
+		meta(property='og:site_name', content=ogSiteName)
+		meta(property='fb:admin', content=fbNumericID)
+		
+	body
+		block header
+		include ../partials/primary-nav.pug
+
+		block content
+
+		block foot
+		include ../partials/footer.pug
+		include ../partials/copyright.pug
+		block scripts
+		script(src='/jquery.js')
+
